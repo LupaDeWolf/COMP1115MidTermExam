@@ -8,7 +8,7 @@ Random random = new Random();
 int randomNumber = random.Next(1, 100);
 Console.WriteLine(randomNumber);
 
-
+int score;
 int attempt = 1;
 int playerGuess = 0;
 bool correct = false;
@@ -50,10 +50,28 @@ while (true)
 
 }
 
+if (attempt == 1)
+{
+    score = 100;
+}
+else if (attempt == 2 || attempt == 3)
+{
+    score = 80;
+}
+else if (attempt == 4 || attempt == 5)
+{
+    score = 60;
+}
+else if (attempt == 6 || attempt == 7) {
+    score = 0;
+}
+
 if (correct)
 {
     Console.WriteLine("\nCorrect, you win!!");
+    
 } else
 {
     Console.WriteLine($"\nYou failed, the correct number was {randomNumber}");
 }
+
