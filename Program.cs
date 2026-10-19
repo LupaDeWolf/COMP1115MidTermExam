@@ -52,5 +52,8 @@ while (true)
 
 if (correct)
 {
-    Console.WriteLine("Correct, you win!!");
+    Console.WriteLine("\nCorrect, you win!!");
+} else
+{
+    Console.WriteLine($"\nYou failed, the correct number was {randomNumber}");
 }
