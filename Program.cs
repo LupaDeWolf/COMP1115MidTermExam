@@ -6,3 +6,25 @@ Console.WriteLine("I will tell you whether your guess was higher or lower than t
 
 Random random = new Random();
 int randomNumber = random.Next(1, 100);
+
+
+int attempt = 1;
+int playerGuess = 0;
+
+while (true)
+{
+    Console.WriteLine($"Please enter your {attempt} number");
+    try
+    {
+        playerGuess = int.Parse(Console.ReadLine());
+    }
+    catch
+    {
+        Console.WriteLine("\nKindly enter a number");
+        continue;
+    }
+    if (playerGuess > 100 || playerGuess < 1)
+    {
+        Console.WriteLine("\nA number between 1 and 100");
+    }
+}
