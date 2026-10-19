@@ -4,3 +4,5 @@ Console.WriteLine("You have 7 attempts to guess it");
 Console.WriteLine("I will tell you whether your guess was higher or lower than the number");
 
 
+Random random = new Random();
+int randomNumber = random.Next(1, 100);
