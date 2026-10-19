@@ -3,17 +3,21 @@ Console.WriteLine("The computer will generate a random number between 1 and 100"
 Console.WriteLine("You have 7 attempts to guess it");
 Console.WriteLine("I will tell you whether your guess was higher or lower than the number");
 
+int highScore = 0;
+int score = 0;
+
+int playerGuess = 0;
+
+string playAgain;
+
 while (true)
 {
     Random random = new Random();
     int randomNumber = random.Next(1, 100);
     Console.WriteLine(randomNumber);
 
-    int score;
-    int attempt = 1;
-    int playerGuess = 0;
     bool correct = false;
-    string playAgain;
+    int attempt = 1;
 
     while (true)
     {
@@ -34,6 +38,7 @@ while (true)
         if (playerGuess > 100 || playerGuess < 1)
         {
             Console.WriteLine("\nA number between 1 and 100");
+            continue;
         }
         attempt++;
 
@@ -52,7 +57,7 @@ while (true)
         }
 
     }
-
+    attempt--;
     if (attempt == 1)
     {
         score = 100;
@@ -73,6 +78,7 @@ while (true)
     if (correct)
     {
         Console.WriteLine("\nCorrect, you win!!");
+       
 
     }
     else
@@ -80,7 +86,14 @@ while (true)
         Console.WriteLine($"\nYou failed, the correct number was {randomNumber}");
     }
 
-    Console.WriteLine("Do you want to play again? (yes or no)");
+    if (highScore < score)
+    {
+        highScore = score;
+    }
+    Console.WriteLine($"Your score is {score}");
+    Console.WriteLine($"The Highscore is currently {highScore}");
+
+    Console.WriteLine("\nDo you want to play again? (yes or no)");
     while (true)
     {
         playAgain = Console.ReadLine();
